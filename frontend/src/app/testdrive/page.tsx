@@ -55,8 +55,9 @@ const TestDriveBookingForm = () => {
   };
 
   return (
-    <div className="max-w-lg mx-auto p-6 bg-white rounded-xl shadow-2xl mt-12">
-      <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">Book a Test Drive</h2>
+    <div className="flex items-center justify-center min-h-screen bg-gray-50">
+      <div className="max-w-lg w-full p-10 bg-white rounded-xl shadow-2xl">
+        <h2 className="text-3xl font-semibold mb-6 text-center text-gray-900">Book a Test Drive</h2>
 
       {success !== null && (
         <p className={`text-center ${success ? 'text-green-600' : 'text-red-600'} mb-6`}>
@@ -75,7 +76,7 @@ const TestDriveBookingForm = () => {
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
             required
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            className="w-full px-5 py-4 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
 
@@ -89,7 +90,7 @@ const TestDriveBookingForm = () => {
             value={userEmail}
             onChange={(e) => setUserEmail(e.target.value)}
             required
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            className="w-full px-5 py-4 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
 
@@ -103,7 +104,7 @@ const TestDriveBookingForm = () => {
             value={userPhone}
             onChange={(e) => setUserPhone(e.target.value)}
             required
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            className="w-full px-5 py-4 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
 
@@ -117,7 +118,7 @@ const TestDriveBookingForm = () => {
             value={date}
             onChange={(e) => setDate(e.target.value)}
             required
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            className="w-full px-5 py-4 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
 
@@ -131,7 +132,7 @@ const TestDriveBookingForm = () => {
             value={timeSlot}
             onChange={(e) => setTimeSlot(e.target.value)}
             required
-            className="w-full p-4 mt-2 border-2 border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
+            className="w-full px-5 py-4 mt-2 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
           />
         </div>
 
@@ -139,12 +140,13 @@ const TestDriveBookingForm = () => {
         <button
           type="submit"
           disabled={loading}
-          className="w-full py-3 bg-blue-600 text-white font-semibold text-lg rounded-md transition duration-300 hover:bg-blue-700 focus:outline-none"
+          className="w-full py-4 bg-blue-600 text-white font-semibold text-lg rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition duration-300"
         >
           {loading ? 'Booking...' : 'Book Test Drive'}
         </button>
       </form>
     </div>
+      </div>
   );
 };
 

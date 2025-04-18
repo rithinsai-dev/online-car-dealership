@@ -25,7 +25,7 @@ const CarDetails = () => {
         const data = await response.json();
         setCar(data);
         setLoading(false);
-      } catch (err) {
+      } catch (err: any) { // or err: unknown if you prefer to handle unknown errors more explicitly
         setError(err.message);
         setLoading(false);
       }
@@ -44,15 +44,15 @@ const CarDetails = () => {
 
   return (
     <div className="min-h-screen bg-white py-12 px-4 flex justify-center items-center">
-      <div className="w-full lg:w-3/4 bg-white flex flex-col lg:flex-row items-center justify-between">
-        <div className="w-full lg:w-1/2 mb-8 lg:mb-0">
+<div className="w-full lg:w-3/4 bg-white flex flex-col lg:flex-row items-center justify-center lg:justify-between space-y-8 lg:space-y-0 lg:space-x-12">
+        <div className="w-full lg:w-2/3">
           <img
-            src={car.images[0] || '/fallback-image.jpg'} // Fallback image if no image is available
+            src={car.images[0] || '/fallback-image.jpg'}
             alt={`${car.make} ${car.model}`}
             className="w-full h-96 object-cover rounded-lg"
           />
         </div>
-        <div className="w-full lg:w-1/2 text-center lg:text-left px-4">
+        <div className="w-full lg:w-1/3 text-center lg:text-left px-4 py-8">
           <h2 className="text-4xl font-extrabold text-gray-800 mb-4">{car.make} {car.model}</h2>
           <p className="text-xl text-gray-600 mb-6">{car.year} | {car.transmission} | {car.fuelType}</p>
           <p className="text-3xl font-semibold text-gray-900 mb-6">{car.price} USD</p>
@@ -60,11 +60,11 @@ const CarDetails = () => {
             <strong>Features:</strong> {car.features.join(', ')}
           </p>
           <button
-  onClick={() => router.push(`/purchase?carId=${car._id}`)}
-  className="bg-green-600 text-white px-6 py-3 rounded-lg text-xl font-semibold"
->
-  Purchase Now
-</button>
+            onClick={() => router.push(`/purchase?carId=${car._id}`)}
+            className="bg-green-600 text-white px-6 py-3 rounded-lg text-xl font-semibold"
+          >
+            Purchase Now
+          </button>
         </div>
       </div>
     </div>
